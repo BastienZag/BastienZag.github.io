@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/start.forms.fieldsets.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/start.forms.fieldsets.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['start.forms.fieldsets']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container" ng-init="formData = { label: '' }">
+      <h1> Input-row-text </h1>
+      <start-input-row
+      label="{{mock.label.data}}"
+      field-id="mock.fieldId.data"
+      field-model="formData.fieldModel"
+      field-type="{{mock.fieldType.data}}"
+      field-placeholder="{{mock.fieldPlaceholder.data}}"
+      field-required="mock.fieldRequired.data">
+   </start-input-row>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/gui.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/gui.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['gui.components']).controller('MockController', ['$scope', function(scope) {
+      scope.baseUrl = '../../';
+      scope.getTemplateUrl = function() {
+         return scope.baseUrl + 'app/dist/templates/styleguide-template.html';
+      };
+   }]);
+   </script>
+
+</head>
+<body ng-app="myApp" ng-controller="MockController">
+
+   <main class="container">
+      <h1> Template: styleguide</h1>
+      <ng-include src="getTemplateUrl()"></ng-include>
+   </main>
+
+</body>
+</html>

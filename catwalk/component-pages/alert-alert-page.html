@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/gui.ng.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/gui.ng.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['gui.ng.components']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <h1> Alerts </h1>
+
+      <gui-alert close-button="false" type="danger" data-grunticon-embed>
+         I'm a danger alert.
+      </gui-alert>
+
+      <gui-alert close-button="true" type="success" data-grunticon-embed>
+         I'm a success alert and you can close me.
+      </gui-alert>
+
+      <gui-alert close-button="true" type="warning" data-is-closed="false" data-grunticon-embed>
+         I'm a warning alert and I can be close by default
+      </gui-alert>
+
+      <div class="playground">
+
+         <h1>Playground</h1>
+
+         <gui-alert close-button="playground.close" type="{{playground.type}}">
+            {{playground.text}}
+         </gui-alert>
+
+         <fieldset ng-init="playground.text = 'Hello world'">
+            <!-- <label for="typeSelect"> Text: </label>
+            <input type="text" ng-model="playground.text"> -->
+            <md-input-container flex>
+               <label>Text</label>
+               <input ng-model="playground.text">
+            </md-input-container>
+         </fieldset>
+
+         <fieldset ng-init="playground.type = 'success'">
+            <md-select ng-model="playground.type">
+               <md-option value="danger">Danger</md-option>
+               <md-option value="warning">Warning</md-option>
+               <md-option value="success">Success</md-option>
+            </md-select>
+         </fieldset>
+
+         <fieldset ng-init="playground.close=false">
+            <md-switch ng-model="playground.close" aria-label="Show close button" ng-true-value="true" ng-false-value="false" class="md-warn">
+               Show close button: {{ playground.close }}
+            </md-switch>
+         </fieldset>
+      </div>
+   </main>
+
+</body>
+</html>

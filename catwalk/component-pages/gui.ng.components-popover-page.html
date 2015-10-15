@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/gui.ng.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/gui.ng.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['gui.ng.components']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <h1> Directive: popover </h1>
+
+      <div class="test-separator DONTUSETHISINPROD" style="height: 200px;"></div>
+
+      <div gui-popover class="popover-wrapper">
+         <button class="btn btn-primary popover js-popover">
+            Toggle switch popover
+         </button>
+         <div class="popover-popup" aria-hidden="false" tabindex="-1" aria-label="Use the ESC key to close">
+            <p class="popover-popup-title">
+               Toggle switch popover
+            </p>
+            <p class="popover-popup-body">
+               The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her
+               in a languid, sleepy voice.
+               <a class="btn btn-hero" href="#">You can click me</a>
+            </p>
+         </div>
+      </div>
+   </main>
+
+</body>
+</html>

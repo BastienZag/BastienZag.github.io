@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/start.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/start.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['start.components']).controller('mockController', mockController);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <div>
+         <h1> UI-progress </h1>
+         <start-ui-progress step-number="mock.step" steps="mock.steps"></start-ui-progress>
+      </div>
+
+      <div class="playground">
+         <md-button ng-click="updateStep()" class="md-raised md-primary">Update ui-progress</md-button>
+      </div>
+
+      <script class="mock">
+      // Mock only! don't use this
+      var mockScope = angular.element('main').scope();
+
+      mockScope.mock = {
+         step: 1,
+         steps: ['First Step', 'Second Step', 'Third Step']
+      };
+
+      mockScope.updateStep = function () {
+         if (mockScope.mock.step >= mockScope.mock.steps.length) {
+            mockScope.mock.step = 1;
+         } else {
+            mockScope.mock.step = mockScope.mock.step + 1;
+         }
+      };
+      </script>
+
+   </main>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/start.forms.fieldsets.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/start.forms.fieldsets.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['start.forms.fieldsets']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <h1> Input-row-text </h1>
+      <form name="myForm">
+         <start-input-row label="Name">
+            <start-text-input start-model="myForm.lastName"></start-text-input>
+         </start-input-row>
+      </form>
+   </main>
+
+</body>
+</html>
