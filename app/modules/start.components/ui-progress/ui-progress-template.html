@@ -1,0 +1,8 @@
+<div class="start-uiProgress _start-uiProgress">
+	<ul>
+		<li ng-repeat="step in steps" class="step{{$index + 1}}" ng-class="{'is-active' : (stepNumber === $index + 1)}">
+			<span class="step-number"><span class='hidden-xs'>Step </span>{{$index + 1}}.</span>
+			<span class="step-name">{{ step }}</span>
+		</li>
+	</ul>
+</div>

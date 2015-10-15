@@ -1,0 +1,22 @@
+<!-- ng-form="fieldForm" -->
+<div ng-form="fieldForm" ng-class="{'has-button{' : button}" class="input-row input-row-text {{ class }} clearfix">
+
+	<div ng-disabled="disabled" class="input-row-label form-left">
+		<label class="form-label" for="{{ fieldCtrl.fieldId }}">{{ fieldCtrl.label }}</label>
+		<ng-transclude></ng-transclude>
+	</div>
+
+	<div class="form-right">
+
+		<div ng-switch="fieldCtrl.fieldType">
+			<start-text-input ng-switch-when="text" options="fieldCtrl"></start-text-input>
+			<start-email-input ng-switch-when="email" options="fieldCtrl"></start-email-input>
+		</div>
+
+		<div class="errors" ng-messages="fieldForm[fieldCtrl.fieldId].$dirty && fieldForm[fieldCtrl.fieldId].$error" role="alert">
+			<div ng-message="required">You did not enter a value for this field</div>
+			<div ng-message="email">It's not a valid email</div>
+		</div>
+
+	</div>
+</div>

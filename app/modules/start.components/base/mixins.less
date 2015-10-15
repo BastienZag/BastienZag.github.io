@@ -1,0 +1,396 @@
+/*
+ *  MIXINS
+ */
+
+.centered() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vert-centered {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.alert-hero {
+	background-color: @color-B-5;
+	border-color: @color-B-50;
+}
+
+.container-padding {
+	padding-left: @gutter-width-lg;
+	padding-right: @gutter-width-lg;
+	@media (min-width: @screen-sm-min) {
+		padding-left: @gutter-width-lg*2;
+		padding-right: @gutter-width-lg*2;
+	}
+}
+
+.mgutters {
+	margin-left: @gutter-width;
+	margin-right: @gutter-width;
+
+	@media (min-width: @screen-sm-min) {
+		margin-left: @gutter-width-lg;
+		margin-right: @gutter-width-lg;
+	}
+}
+
+.pgutters {
+	padding-left: @gutter-width-sm;
+	padding-right: @gutter-width-sm;
+
+	@media (min-width: @screen-sm-min) {
+		padding-left: @gutter-width-lg;
+		padding-right: @gutter-width-lg;
+	}
+}
+
+.pgutters-lg {
+	padding-left: @gutter-width-lg;
+	padding-right: @gutter-width-lg;
+}
+
+.mgutters-lg {
+	margin-left: @gutter-width-lg;
+	margin-right: @gutter-width-lg;
+}
+
+.negate-gutters {
+	margin-left: -@gutter-width;
+	margin-right: -@gutter-width;
+
+	@media (min-width: @screen-sm-min) {
+		margin-left: -@gutter-width-lg;
+		margin-right: -@gutter-width-lg;
+	}
+}
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/*
+ *  TYPOGRAPHY
+ */
+
+.money,
+.money-lg {
+	color: @color-Values;
+	font-weight: 300;
+	line-height: 1;
+}
+.money {
+	font-size: @size-money;
+}
+.money-lg {
+	font-size: @size-money-lg;
+}
+.money-per {
+	font-size: @size-h4;
+}
+
+.text-center-xs {
+	@media all and (max-width: @screen-xs-max) {
+		text-align: center;
+	}
+}
+
+
+/*
+ *  BUTTONS AND LINKS
+ */
+
+.btn-inline-block {
+	// display: inline-block;
+	width: 100%;
+
+	@media all and (min-width: @screen-lg-mobile) {
+		max-width: 240px;
+		margin-left: @spacing-base*1.5;
+		margin-right: @spacing-base*1.5;
+	}
+	@media all and (min-width: @screen-md-min) {
+		max-width: 260px;
+	}
+}
+
+.btn-block-centered {
+	width: 100%;
+	display: block;
+	overflow: hidden;
+
+	@media all and (min-width: @screen-xs-min) {
+		max-width: 260px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	// @media all and (min-width: @screen-md-min) {
+	// 	max-width: 260px;
+	// }
+}
+
+.btn-inline-block-lg {
+	display: block;
+	width: 100%;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn-none {
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+.btn-edit-delete {
+	min-width: @edit-button-width;
+
+	@media (max-width: @screen-xs-min) {
+		padding: 4px 12px;
+		margin-top: -5px;
+	}
+}
+
+.link-block {
+	display: block;
+}
+
+.link-dark {
+	color: black;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+.btn-popover {
+	padding: 2px 8px;
+	position: relative;
+	top: 1px;
+}
+
+.center-button {
+	text-align: center;
+}
+
+
+
+/*
+ *  FORMS
+ */
+.disabled-input {
+	background-color: @color-J;
+	border-color: @color-H-70;
+	color: @color-input-readonly;
+}
+
+
+// Creating a reveal-toggle style panel
+.ui-block {
+	border: 1px solid @color-Border;
+	background-color: #fff; // @todo make this a setting variable
+	padding: @spacing2;
+	margin-bottom: @spacing2;
+}
+
+.ui-block .summary-info {
+	margin-bottom: 0;
+}
+
+.list-inline-lg {
+	@media (min-width: @screen-lg-mobile) {
+		padding-left: 0;
+		list-style: none;
+		> li {
+			padding-left: 0;
+			padding-right: 12px;
+			display: inline-block;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+}
+
+// disabled checkbox image from GUI 2.0.0
+.checkbox-disabled {
+	// background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAwtJREFUWIXFlstu00AYhc/M2InjuK5zqdOEpEC5SJGqskHqhiUbtmzYIbaIHUsegDfgBXiAvgDsAamrUolrUSFN0yRtmjiO4/gyw6IXKaRN2jQNZ+f/9/h8Gp8Z/QRH2tjY0JhwnxPKniHwbwtCIpisAlBSJQKrAQlfLy2t7AIAAYBvnz/eC8HexeOzcSOZViNRBZTSiboLIeB7Lqxmw7NazS5E8LC4vLJGvq6tpaGI72Z2IRHXZidqepYc20K1XNqnir9IESUvtZmkOi1zAFA1HTFNiwWu9IJSSp7oRiI6NfcjzSbmVEbJUxpynpXlqfsjqijgPLhFIUSMMjZ1gMOQU3myUR8HZNIfDAIfldImPM/9PwD1Sgldx0H59yasZmO6AM1GDV2nAwAQnGOvWkatUpoOQM/t4mCvNlBXYurVA3DOUauUIIToq8fiM9CN1NUDNOoV+F6vr8YkBjObH7l2JADnfGjfsa1TwzaXyYMx6XIAnIcob/3Afm13YHsBIAwD1KvbA3XdSELV9JHmIwH2qjvwfQ+tgzp2/vxC4Ht9/VqlhDAI+2pyJIrkXPZc5kMBbKsJ22qePPdcB9tbP09qVnMf3Y7dt4YQAjObv9AsceZPstutgRrnIWqVEjq2BcduD/QTKRNRZfix+1dnos7nFpBIZU7tddotCNEfTkVVYaTMC5kPBQAhSKRN5AqLI9NMKYM5X7iw+XCAIylqHIWbdxFTtTPfSWdykOTxZthzpYUyhmzhJpLpDEBIX0/TDWi6MZb5uQGOZaRM5PKLYJIMAJAkGSkzN7b5hQGAw7Dlb9yBqukwcwWwS05To+/KU8QYw/y165cyPhYlRPj/Hqlp6NCTBJRSabPnnm98mqS8Xg+g2KVByN+2GnvOtAGs5r5HBFmlkhK86drtrtMZvFqvSo5toW21up7wXhMA+LL+6T6I9F6fNWIzRjISiURByGTnVc45eq6L1kHdcW3b4QgeFZdX1k5ulfX1D5kIibwSRDwGxzwgxjohQxB8xuSfPORvhey+KRYftAHgL6qqKgoqpeUiAAAAAElFTkSuQmCC');
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ctitle%3ECheckbox-on-disabled%3C%2Ftitle%3E%3Cpath%20fill%3D%22%23f9f9f8%22%20d%3D%22M6%2031.5C.6%2031.5.5%2026.2.5%2026V6C.5.6%205.8.5%206%20.5h20c5.4%200%205.5%205.3%205.5%205.5v20c0%205.4-5.3%205.5-5.5%205.5H6z%22%2F%3E%3Cpath%20fill%3D%22%23d7d2cb%22%20d%3D%22M26%201c4.8%200%205%204.5%205%205v20c0%204.8-4.5%205-5%205H6c-4.8%200-5-4.5-5-5V6c0-4.8%204.5-5%205-5h20m0-1H6S0%200%200%206v20s0%206%206%206h20s6%200%206-6V6s0-6-6-6zM21.3%208l-7.5%2010.6-5.2-3.8L6%2018.4l8.9%206.6L25%2010.7z%22%2F%3E%3C%2Fsvg%3E');
+	background-repeat: no-repeat;
+}
+
+/*
+ *  ICONS
+ */
+
+.circle-icon {
+	display: table-cell;
+	vertical-align: middle;
+	border: 1px solid @color-Border;
+	background-color: @color-B;
+	border-radius: 50%;
+
+	.icon {
+		color: white;
+	}
+}
+
+
+// SPACING
+
+.top-margin0 {
+	margin-top: 0;
+}
+.top-margin1 {
+	margin-top: @spacing1;
+}
+.top-margin2 {
+	margin-top: @spacing2;
+}
+.top-margin3 {
+	margin-top: @spacing3;
+}
+.top-margin4 {
+	margin-top: @spacing4;
+}
+.top-margin5 {
+	margin-top: @spacing5;
+}
+.top-margin6 {
+	margin-top: @spacing6;
+}
+.top-margin7 {
+	margin-top: @spacing7;
+}
+
+.bottom-margin0 {
+	margin-bottom: 0;
+}
+.bottom-margin1 {
+	margin-bottom: @spacing1;
+}
+.bottom-margin2 {
+	margin-bottom: @spacing2;
+}
+.bottom-margin3 {
+	margin-bottom: @spacing3;
+}
+.bottom-margin4 {
+	margin-bottom: @spacing4;
+}
+.bottom-margin5 {
+	margin-bottom: @spacing5;
+}
+.bottom-margin6 {
+	margin-bottom: @spacing6;
+}
+.bottom-margin7 {
+	margin-bottom: @spacing7;
+}
+
+.top-padding0 {
+	padding-top: 0;
+}
+.top-padding1 {
+	padding-top: @spacing1;
+}
+.top-padding2 {
+	padding-top: @spacing2;
+}
+.top-padding3 {
+	padding-top: @spacing3;
+}
+.top-padding4 {
+	padding-top: @spacing4;
+}
+.top-padding5 {
+	padding-top: @spacing5;
+}
+.top-padding6 {
+	padding-top: @spacing6;
+}
+.top-padding7 {
+	padding-top: @spacing7;
+}
+
+.bottom-padding0 {
+	padding-bottom: 0;
+}
+.bottom-padding1 {
+	padding-bottom: @spacing1;
+}
+.bottom-padding2 {
+	padding-bottom: @spacing2;
+}
+.bottom-padding3 {
+	padding-bottom: @spacing3;
+}
+.bottom-padding4 {
+	padding-bottom: @spacing4;
+}
+.bottom-padding5 {
+	padding-bottom: @spacing5;
+}
+.bottom-padding6 {
+	padding-bottom: @spacing6;
+}
+.bottom-padding7 {
+	padding-bottom: @spacing7;
+}
+
+
+// match the default p margin bottom
+.p-margin {
+	margin-bottom: 10px;
+}
+// remove the default p margin bottom
+.p-nomargin {
+	margin-bottom: 0;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+
+// bank-item content will extend to its borders
+// PARKED
+.bank-item-content {
+	margin-left: 0;
+	margin-right: 0;
+	> div:nth-child(2) {
+		padding-left: 0;
+	}
+	> div:nth-child(3) {
+		padding-right: 0;
+	}
+	> div:nth-child(4) {
+		padding-left: 0;
+	}
+	@media (min-width: @screen-sm-min) {
+		> div:nth-child(2) {
+			padding-left: 18px;
+		}
+		> div:nth-child(4) {
+			padding-left: 18px;
+		}
+
+		> div:first-child {
+			padding-left: 0;
+		}
+		> div:nth-child(3) {
+			padding-right: 0;
+		}
+	}
+}

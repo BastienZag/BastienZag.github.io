@@ -1,0 +1,50 @@
+<div class="yoda-componentParamsTable container" ng-if="params">
+
+	<h2>Parameters</h2>
+	<div class="yoda-componentParamsTable-table table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Mandatory</th>
+					<th scope="col">Type</th>
+					<th scope="col">Data</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(label, item) in params">
+					<td class="yoda-componentParamsTable-cell">{{ hyphenate(label) }}</td>
+					<td class="yoda-componentParamsTable-cell">{{ item.mandatory }}</td>
+					<td class="yoda-componentParamsTable-cell">{{ getType(item) }}</td>
+					<td class="yoda-componentParamsTable-cell">
+						<div class="yoda-componentParamsTable-cell-data" ng-switch="getType(item)">
+
+							<input ng-switch-when="string" type="text" class="form-control" ng-model="item.data">
+
+							<input ng-switch-when="number" type="number" class="form-control" ng-model="item.data">
+
+							<div ng-switch-when="array">
+								<input ng-repeat="listItem in item.data track by $index" type="text" ng-model="item.data[$index]" class="form-control">
+							</div>
+
+							<label ng-switch-when="object">n/a</label>
+
+							<div ng-switch-when="boolean">
+								<md-switch ng-model="item.data" ng-true-value="true" ng-false-value="false" class="md-warn">
+									{{ item.data }}
+								</md-switch>
+							</div>
+
+							<div ng-switch-when="select">
+								<md-select ng-model="item.data">
+									<md-option ng-repeat="value in item.values" value="{{value}}">{{value}}</md-option>
+								</md-select>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

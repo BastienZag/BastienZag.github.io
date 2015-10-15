@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/start.forms.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+   <script src="../../app/dist/start.forms.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['start.forms.components']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container" ng-init="formData = { firstName : '' }">
+      <h1> text-input </h1>
+      <start-text-input field-model="formData.firstName"></start-text-input>
+   </main>
+
+</body>
+</html>

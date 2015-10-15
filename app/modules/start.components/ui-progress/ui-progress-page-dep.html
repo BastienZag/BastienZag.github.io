@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="../../app/dist/start.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/start.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['start.components']).controller('mockController', mockController);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <div>
+         <h1> UI-progress </h1>
+         <start-ui-progress step-number="mock.step.data" steps="mock.steps.data"></start-ui-progress>
+      </div>
+   </main>
+
+</body>
+</html>

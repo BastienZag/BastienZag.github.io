@@ -1,0 +1,199 @@
+@import "../../start.components/index.less";
+
+.start-inputRowText {
+
+
+}
+
+
+/*
+* input row
+*
+*/
+
+.input-row {
+    position: relative;
+
+    &:last-child {
+        .bottom-padding1();
+    }
+
+    &:first-child {
+        .item-editable & {
+            padding-top: 0;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        max-width: 50em;
+        .centered();
+    }
+
+}
+
+.input-row-wide {
+    max-width: none;
+}
+
+.form-left,
+.form-right {
+    position: relative;
+}
+
+// remove bottom margin of input row on mobile
+@media (max-width: @screen-sm-min) {
+    .input-row:last-child .form-group {
+        margin-bottom: 0;
+    }
+}
+
+// apply no-popovers class to a parent of form-left, to halve the padding right on form-left
+body .no-popovers {
+    .form-left {
+        padding-right: @spacing1_5;
+    }
+}
+
+.form-left {
+    padding-top: @spacing1;
+    margin-bottom: @spacing1;
+
+    @media (min-width: @screen-xs-max) {
+        padding-right: @spacing3;
+    }
+
+    @media (max-width: @screen-xs-min) {
+        margin-bottom: @spacing2;
+    }
+
+    .btn-popover {
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-right: -8px;
+        // right: 0;
+
+        @media (max-width: @screen-xs-min) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            .icon {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+
+    @media (max-width: @screen-xs-min) {
+        padding-right: 36px;
+    }
+}
+
+
+.form-right {
+    margin-bottom: @spacing4;
+    @media (min-width: @screen-sm-min) {
+        +.form-right {
+            float: right;
+            clear: right;
+        }
+    }
+
+    &.has-error .input-group-btn button {
+        border-color: @danger-color;
+    }
+
+    &.has-error p {
+        margin-bottom: -3px;
+    }
+
+    @media (max-width: @screen-xs-min) {
+        margin-bottom: @spacing2;
+    }
+}
+
+.input-row-inline {
+    .form-left,
+    .form-right {
+        float: left;
+        width: 50%;
+    }
+
+    // make RHS wider on xs mobile
+    @media (max-width: (@screen-lg-mobile - 1)) {
+        .form-left {
+            width: 35%;
+        }
+        .form-right {
+            width: 65%;
+
+            .btn-details {
+                float: right;
+            }
+        }
+    }
+}
+
+.has-error .input-address-line2 {
+    border-color: @color-Border;
+}
+
+@media (min-width: @input-row-break) {
+    .input-row-label,
+    .input-row-inputs,
+    .form-left,
+    .form-right {
+        float: left;
+        width: 50%;
+    }
+
+    .input-row {
+        .form-checkbox {
+            float: right;
+            width: 50%;
+        }
+
+    }
+
+    .input-row-label {
+        text-align: right;
+    }
+
+    .input-row {
+        .form-left {
+            padding-right: @spacing2;
+            // background-color: aliceblue;
+        }
+
+        .form-right {
+            padding-left: @spacing2;
+            // background-color: antiquewhite;
+        }
+    }
+
+}
+
+
+.input-row-inputs {
+    max-width: 30em;
+
+    > .input-group .form-control:last-child {
+        border-radius: 0;
+    }
+
+    > .form-select .form-control {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: @color-Background;
+    }
+
+    .form-group .select-menu .caret {
+        z-index: 3;
+    }
+
+}
+
+.module-row {
+    padding: .5em 1em;
+}

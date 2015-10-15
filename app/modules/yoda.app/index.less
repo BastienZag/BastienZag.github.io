@@ -1,0 +1,22 @@
+// Add your dependencies import here
+// ex: @import "../gui.core";
+
+@import "../../../node_modules/angular-material/angular-material.css";
+@import "../../../node_modules/angular-material-icons/angular-material-icons.css";
+
+// @import "../gui.blend/index.less";
+@import "../start.components/index.less";
+
+@import "../yoda.catwalk/index.less";
+
+
+// Grunt will add an import for every components with an index.less between these tags
+// StartGruntImports
+@import (once) "styles/index.less";
+// EndGruntImports
+
+
+// FIXME: Hack for Material global, Remove this
+// *:focus {
+// 	outline: none;
+// }

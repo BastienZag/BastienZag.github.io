@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="js">
+<head>
+   <link rel="stylesheet" href="../../app/dist/gui.ng.components.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="../../app/dist/gui.ng.components.js"></script>
+
+   <script type="text/javascript">
+   var myApp = angular.module('myApp', ['gui.ng.components']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <h2> Dropdown </h2>
+
+      <!-- Dropdown -->
+      <div data-gui-dropdown class="btn-dropdown" aria-haspopup="true">
+         <button type="button" class="btn btn-primary js-button-dropdown" aria-label="Primary with buttons. Hit enter to open dropdown">
+            <span class="btn-dropdown-caret">Primary with buttons</span>
+         </button>
+         <ul class="dropdown-menu" role="menu" aria-label="Hit the Esc key to close dropdown" tabindex="-1" aria-hidden="true">
+            <li class="dropdown-menu-headline">Headline</li>
+            <li><button data-ng-click="sayHello()" class="btn btn-link">Action 1</button></li>
+            <li><button ng-click="sayHello()" class="btn btn-link">Another action</button></li>
+            <li class="dropdown-menu-headline dropdown-menu-divider">With a repeat</li>
+            <li ng-repeat="item in mock.array"><button ng-click="sayHello()" class="btn btn-link">{{item}}</button></li>
+         </ul>
+      </div>
+
+      <div gui-dropdown class="btn-dropdown" aria-haspopup="true">
+         <button type="button" class="btn btn-hero js-button-dropdown" aria-label="Hero with buttons. Hit enter to open dropdown">
+            <span class="btn-dropdown-caret">Hero with buttons</span>
+         </button>
+         <ul class="dropdown-menu" role="menu" aria-label="Hit the Esc key to close dropdown" tabindex="-1" aria-hidden="true">
+            <li class="dropdown-menu-headline">Headline</li>
+            <li><button ng-click="sayHello()" class="btn btn-link">Action 1</button></li>
+            <li><button ng-click="sayHello()" class="btn btn-link">Another action</button></li>
+         </ul>
+      </div>
+
+      <div gui-dropdown class="btn-dropdown" aria-haspopup="true">
+         <button type="button" class="btn btn-neutral js-button-dropdown" aria-label="Neutral with links. Hit enter to open dropdown">
+            <span class="btn-dropdown-caret">Neutral with links</span>
+         </button>
+         <ul class="dropdown-menu" role="menu" aria-label="Hit the Esc key to close dropdown" tabindex="-1" aria-hidden="false">
+            <li class="dropdown-menu-headline">Headline</li>
+            <li><a href="#">Action 1</a></li>
+            <li><a href="#">Another action</a></li>
+            <li class="dropdown-menu-headline dropdown-menu-divider">Headline 2</li>
+            <li><a href="#">Action 3</a></li>
+            <li><a href="#">Last action</a></li>
+         </ul>
+      </div>
+   </main>
+
+</body>
+</html>

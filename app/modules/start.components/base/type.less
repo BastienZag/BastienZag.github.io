@@ -1,0 +1,37 @@
+/*
+ *  GLOBAL TYPE STYLE
+ */
+
+.section-heading {
+	color: @color-Text;
+	font-size: @size-h1;
+	.top-margin1();
+
+	&.heading-strong {
+		font-weight: 700;
+	}
+
+	@media (max-width: @screen-xs-max) {
+		font-size: @size-h3;
+	}
+
+}
+
+p {
+	margin: 0 0 @spacing2;
+}
+
+
+.ui-heading,
+.ui-heading-h,
+.section-heading {
+	&.heading-strong {
+		font-weight: 700;
+		h2 {
+			font-weight: 700;
+		}
+	}
+	.heading-strong {
+		font-weight: 700;
+	}
+}

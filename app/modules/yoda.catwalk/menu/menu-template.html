@@ -1,0 +1,10 @@
+<div class="yoda-catwalkMenu _yoda-catwalkMenu">
+	<div class="yoda-catwalkMenu-logo">
+		<a class="yoda-catwalkMenu-logoText" ui-sref="home">Yo:Da</a>
+	</div>
+
+	<nav class="yoda-catwalkMenu-navigation">
+		<yoda-collapse name="{{moduleName}}" ng-repeat="(moduleName, modules) in tree" components="modules.components">
+		</yoda-collapse>
+	</nav>
+</div>

@@ -1,0 +1,38 @@
+<div class="yoda-fabMenu _yoda-fabMenu">
+
+	<md-fab-speed-dial
+	md-open="isOpen"
+	md-direction="down"
+	ng-class="selectedMode"
+	ng-mouseenter="isOpen=true" ng-mouseleave="isOpen=false">
+		<md-fab-trigger>
+			<md-button aria-label="menu" class="md-fab">
+				<md-tooltip md-direction="top">Helper</md-tooltip>
+				<ng-md-icon icon="add" size="38"></md-icon>
+			</md-button>
+		</md-fab-trigger>
+		<md-fab-actions>
+			<md-button ng-click="openNewTab()" aria-label="New tab" class="md-fab md-raised md-mini">
+				<md-tooltip md-direction="top">Open in a new tab</md-tooltip>
+				<ng-md-icon icon="open_in_new" size="22"></md-icon>
+			</md-button>
+			<md-button ng-click="" aria-label="Remove tests" class="md-fab md-raised md-mini">
+				<md-tooltip md-direction="top">Remove tests</md-tooltip>
+				<ng-md-icon icon="remove" size="22"></md-icon>
+			</md-button>
+			<md-button ng-click="" aria-label="Remove Header" class="md-fab md-raised md-mini">
+				<md-tooltip md-direction="top">Remove Header</md-tooltip>
+				<ng-md-icon icon="border_top" size="22"></md-icon>
+			</md-button>
+			<md-button ng-click="" aria-label="Move this button" class="md-fab md-raised md-mini">
+				<md-tooltip md-direction="top">Move this Button</md-tooltip>
+				<ng-md-icon icon="unfold_more" size="22"></md-icon>
+			</md-button>
+			<md-button ng-click="" aria-label="Refresh" class="md-fab md-raised md-mini">
+				<md-tooltip md-direction="top">Reload the component</md-tooltip>
+				<ng-md-icon icon="refresh" size="22"></md-icon>
+			</md-button>
+		</md-fab-actions>
+	</md-fab-speed-dial>
+
+</div>

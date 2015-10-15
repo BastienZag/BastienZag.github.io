@@ -1,0 +1,46 @@
+<div class="start-register">
+
+	<h2>Register form</h2>
+	<form name="registerForm" class="start-register-form" ng-submit="ctrl.handleSubmit(registerForm.$valid, formData)" novalidate>
+
+		<p ng-if="registerForm.$submitted && registerForm.$error">
+			Please fix the errors in your form:
+		</p>
+
+		<start-input-row
+		label="First name"
+		field-model="formData.firstName"
+		field-type="text"
+		field-id="registerForm-firstName"
+		field-placeholder="enter your first name"
+		field-required="true">
+		<!-- <gui-popover></gui-popover> -->
+		</start-input-row>
+
+		<start-input-row
+		label="Last name"
+		field-model="formData.lastName"
+		field-type="text"
+		field-id="registerForm-lastName"
+		field-required="true">
+		</start-input-row>
+
+		<start-input-row
+		label="Email"
+		field-model="formData.email"
+		field-type="email"
+		field-id="registerForm-email"
+		field-required="true">
+		</start-input-row>
+
+		<button class="btn btn-primary start-register-submit">Submit</button>
+
+	</form>
+
+	<div>
+		<h3>
+			data submited
+		</h3>
+		{{ dataSubmitted }}
+	</div>
+</div>
