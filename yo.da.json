@@ -1,0 +1,6 @@
+{
+  "angularVersion": "1.4.4",
+  "appFolder": "./app",
+  "distFolder": "/dist/",
+  "componentsFolder": "/modules/"
+}
